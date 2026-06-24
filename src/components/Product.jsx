@@ -2,7 +2,7 @@ import './Product.css'
 
 function Product(){
     return (
-        <div>
+        <div class="product-container">
             <p>Product Container</p>
         </div>
     );
