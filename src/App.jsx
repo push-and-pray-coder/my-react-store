@@ -7,8 +7,7 @@ import './components/Navbar'
 import Navbar from './components/Navbar'
 import './components/Footer'
 import Footer from './components/Footer'
-import './components/Product'
-import Product from './components/Product'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +18,6 @@ function App() {
     <h1>Hello from h1 again</h1>
     <Navbar/>
     <Navbar></Navbar>
-    <Product></Product>
     <Footer></Footer>
     </div>
   );
