@@ -8,7 +8,6 @@ import Footer from './components/Footer'
 import Product from './components/Product'
 import Catalog from './pages/Catalog'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div>
