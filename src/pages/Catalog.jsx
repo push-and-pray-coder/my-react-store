@@ -19,7 +19,9 @@ function Catalog(){
     return (
         <div className="product-catalog">
             <h1>Product Catalog</h1>
-            {products.map(prod=><Product key={prod._id} data={prod}/>)}
+            <div className="product-grid">
+                {products.map(prod=><Product key={prod._id} data={prod}/>)}
+            </div>
         </div>
     );
 }
