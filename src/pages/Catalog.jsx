@@ -18,7 +18,12 @@ function Catalog(){
 
     return (
         <div className="product-catalog">
-            <h1>Product Catalog</h1>
+            <h1 className="product-title">Product Catalog</h1>
+            <div className="filter">
+                <span>Clothes</span>
+                <span>Shoes</span>
+                <span>Hats</span>
+            </div>
             <div className="product-grid">
                 {products.map(prod=><Product key={prod._id} data={prod}/>)}
             </div>

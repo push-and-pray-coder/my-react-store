@@ -14,10 +14,17 @@ const products = [
         _id: 2
     },
     {
-        name: "Ball Cap",
+        name: "Blue Ball Cap",
         category: "Headwear",
         price: 20.00,
-        image: "hat.png",
+        image: "hat-blue.png",
+        _id: 3
+    },
+    {
+        name: "White Ball Cap",
+        category: "Headwear",
+        price: 20.00,
+        image: "hat-white.png",
         _id: 3
     }
 ];
