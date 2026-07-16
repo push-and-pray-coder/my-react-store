@@ -1,40 +1,37 @@
 import "./Catalog.css"
-import Product from "../components/Product"
-import {useEffect, useState} from "react"
-import DataService from "../services/dataServices"
-
-
-
+import Product from "../components/Product.jsx"
+import DataService from "../services/dataService.js";
+import { useState, useEffect, useRef } from "react";
 
 function Catalog(){
-    const [products, setProducts] = useState([]); //useState could be null but a list is expected
+
+    const [products, setProducts] = useState ([]);
     const [categories, setCategories] = useState([]); //To hold the categories
     const [productsToDisplay, setProductsToDisplay] = useState([]);
-    //let products = [];
 
-    useEffect(() => { //use effect prevents the connection from being reset on every render 
-        //load the data here
-        let service = new DataService(); //create an instance of the dataServices class
-        let data = service.getProducts(); //assigns the product array using dataServices getProduct() function
-        setProducts(data); //render when the data is recieved, importnant later when the data not local
-        setProductsToDisplay(data); //product filter
-        loadCatalog();
-    }, [] //[] means only run it once
+
+    useEffect(
+        ()=>{
+            let service = new DataService();
+            let data = service.getProducts();
+
+            setProducts(data);
+            setProductsToDisplay(data);
+            loadCatalog();
+
+        },[]
     );
-    
-    function loadCatalog(){
-        let categoriesFilter = ["fruit", "grocery", "merch"];
-        setCategories (categoriesFilter);
+
+    function loadCatalog() {
+        let categoriesFilter = ["Clothing", "Shoes", "Headwear"];
+        setCategories(categoriesFilter);
     }
 
-    function filter(category){
-        let list=[];
-        //find the products that match the category
-        //this is a for loop and at the end you have
-        //products to display
+    function filter(category) {
+        let list = [];
 
         products.forEach(item => {
-            if (item.category === category){
+            if (item.category === category) {
                 list.push(item);
             }
 
@@ -44,24 +41,26 @@ function Catalog(){
     }
 
 
-    function clearFilter(){
+    function clearFilter() {
         setProductsToDisplay(products);
     }
 
+    function handleFilterProducts(){
+        
+    }
+
     return (
-        //traverse the data array, and pass each object to the product component
-        //data= is the function input into the product component
-        //key= is used by react to keep track of the product component
-        <div className="catalog">
-            <h1>Check out our products</h1>
-            <div>
+        <div className="product-catalog">
+            <h1 className="product-title">Product Catalog</h1>
+            <div className="filters">
                 <button onClick={clearFilter}>All</button>
+                {categories.map(cat => <button key={cat} onClick={() => filter(cat)}>{cat}</button>)}
             </div>
-            {categories.map(cat=> <button key={cat} onClick={()=>filter(cat)}>{cat}</button>)}
-            {productsToDisplay.map(prod => <Product key={prod._id} data={prod}/>)} 
+            <div className="product-grid">
+                {productsToDisplay.map(prod => <Product key={prod._id} data={prod} />)} 
+            </div>
         </div>
     );
-
 }
 
 export default Catalog;

@@ -1,0 +1,39 @@
+/* .navbar *{
+    border:red solid 1px; 
+} */
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+}
+
+.nav-brand{
+    display:flex;
+    align-items: center;
+}
+
+
+.nav-brand svg{
+    width: 160px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-links svg{
+    width: 24px;
+}
+
+.nav-links a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
