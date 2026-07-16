@@ -1,0 +1,38 @@
+h1{
+    margin-bottom: 64px;
+}
+.about-container{
+    display: flex;
+    /* min-height: 500px; */
+    height: 500px;
+}
+
+.about-text, .about-image{
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    
+}
+
+.about-text{
+    text-align: left;
+}
+
+.about-text p{
+    margin: 0 0 24px;
+}
+
+.about-image img{
+    object-fit: cover;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+
+}
+
+.about-text{
+    padding: 30px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

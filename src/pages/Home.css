@@ -1,0 +1,43 @@
+/* .hero-text{
+    border: 1px blue solid;
+}
+
+.hero-image{
+    border: 1px red solid;
+} */
+
+.shop-button {
+    height: 48px;
+    padding: 0 24px;
+    border-width: 1px;
+    border-radius: 24px;
+    background-color: black;
+    color: white;
+}
+
+.hero-container{
+    margin-top: 48px;
+    display: flex;
+
+}
+.hero-text{
+    flex: 0 0 40%;
+}
+.hero-image{
+    flex: 0 0 60%;
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img{
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+} 
