@@ -1,16 +1,18 @@
 import { useState } from 'react'
+import AdminProduct from './AdminProduct';
+
 function Admin(){
 
     const [couponCode, setCouponCode] = useState("");
     const [couponDiscount, setCouponDiscount] = useState("");
-    const [coupons,setCoupons] = useState([])
+    const [coupons,setCoupons] = useState([]);
     
-    // assignment
-    //productTitle
-    //productCategory
-    //productImage
-    //productPrice
-    //Products
+    const [productTitle, setProductTitle] = useState("");
+    const [productCategory, setProductCategory] = useState("");
+    const [productImage, setProductImage] = useState("");
+    const [productPrice, setProductPrice] = useState("");
+    const [products, setProducts] = useState([]);
+
 
     function saveCoupon(){
         console.log(couponCode);
@@ -27,7 +29,14 @@ function Admin(){
     }
 
     function saveProduct(){
-        
+        const newProduct ={
+            title: productTitle,
+            category: productCategory,
+            image: productImage,
+            price: productPrice,
+        }
+
+        setProducts([...products, newProduct]);
     }
 
     return(
@@ -41,28 +50,29 @@ function Admin(){
                             <div className="card-body">
                                 <div className="mb-2">
                                     <label className="form-label">Title</label>
-                                    <input type="text" className="form-control"/>
+                                    <input type="text" className="form-control" value={productTitle} onChange={(event)=>setProductTitle(event.target.value)}/>
                                 </div>
                                 <div className="mb-2">
                                     <label className="form-label">Category</label>
-                                    <input type="text" className="form-control"/>
+                                    <input type="text" className="form-control" value={productCategory} onChange={(event)=>setProductCategory(event.target.value)}/>
                                 </div>
                                 <div className="mb-2">
                                     <label className="form-label">Image [URL]</label>
-                                    <input type="text" className="form-control"/>
+                                    <input type="text" className="form-control" value={productImage} placeholder="www.images.com" onChange={(event)=>setProductImage(event.target.value)}/>
                                 </div>
                                 <div className="mb-4">
                                     <label className="form-label">Price</label>
-                                    <input type="number" className="form-control"/>
+                                    <input type="number" className="form-control" value={productPrice} onChange={(event)=>setProductPrice(event.target.value)}/>
                                 </div>
                                 <div>
-                                    <button className="btn btn-dark">Save Product</button>
+                                    <button className="btn btn-dark" onClick={saveProduct}>Save Product</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h3>Product List</h3>
+                    <h3>Product List</h3>
+                    <div className="d-flex flex-wrap w-50">
+                        {products.map((prod,index) => <AdminProduct key={index} product={prod}/>)}
                     </div>
                 </section>
                     
@@ -78,7 +88,7 @@ function Admin(){
 
                                 <div className="mb-4">
                                     <label className="form-label">Discount</label>
-                                    <input type="number" className="form-control" value={couponDiscount} onChange={(event) => setCouponDiscount(event.target.value)} />
+                                    <input type="number" className="form-control" value={couponDiscount} onChange={(event)=>setCouponDiscount(event.target.value)} />
                                 </div>
                                 <div>
                                     <button className="btn btn-dark" onClick={saveCoupon}>Save Coupon</button>
@@ -89,10 +99,12 @@ function Admin(){
 
                     <div>
                         <h3> Coupons List</h3>
-                        {coupons.map(coupon=>(
-                            <li key={coupon.code}>{coupon.code} - {coupon.discount}</li>
-                        ))}
-
+                        <ul className="list-group">
+                            {coupons.map(coupon=>(
+                                //bonus: add different bs badge colors based on coupon discount
+                                <li className="list-group-item" key={coupon.code}>{coupon.code} - {coupon.discount}</li>
+                            ))}
+                        </ul>
                     </div>
 
                 </section>

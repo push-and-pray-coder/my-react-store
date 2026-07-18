@@ -1,8 +1,11 @@
 import {Link} from 'react-router-dom'
+import useStore from '../state/cart'
 import './Navbar.css'
 
 function Navbar(){
+    const { user } = useStore();
     return (
+
         <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">Snazzee</Link>
@@ -28,6 +31,7 @@ function Navbar(){
                         </li>
                     </ul>
                 </div>
+                <div className='text-white'>{user.name} {user.cohort}</div>
             </div>
         </nav>
 ); 
