@@ -8,7 +8,7 @@ function Home(){
         <div>
             <div className="hero-container">
                 <div className="hero-text">
-                    <h1>{user.name}'s' Modern Style</h1>
+                    <h1>{user.name}'s Modern Style</h1>
                     <h1>Everyday Comfort</h1>
                     <a href="catalog"><button className="shop-button">SHOP NOW</button></a>
                 </div>

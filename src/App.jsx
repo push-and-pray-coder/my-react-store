@@ -5,6 +5,7 @@ import Admin from './pages/Admin'
 import Catalog from './pages/Catalog'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
+import Cart from './pages/Cart'
 
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
@@ -31,6 +32,7 @@ function App() {
             <Route path="/contact" element={<Contact/>} />
             <Route path="/catalog" element={<Catalog/>}/>
             <Route path="/admin" element={<Admin/>}/>
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<h1>404 Page Not Found</h1>}/>
           </Routes>
         </main>

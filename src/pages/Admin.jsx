@@ -65,7 +65,7 @@ function Admin(){
                                     <input type="number" className="form-control" value={productPrice} onChange={(event)=>setProductPrice(event.target.value)}/>
                                 </div>
                                 <div>
-                                    <button className="btn btn-dark" onClick={saveProduct}>Save Product</button>
+                                    <button className="btn white btn-outline-dark" onClick={saveProduct}>Save Product</button>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ function Admin(){
                                     <input type="number" className="form-control" value={couponDiscount} onChange={(event)=>setCouponDiscount(event.target.value)} />
                                 </div>
                                 <div>
-                                    <button className="btn btn-dark" onClick={saveCoupon}>Save Coupon</button>
+                                    <button className="btn white btn-outline-dark" onClick={saveCoupon}>Save Coupon</button>
                                 </div>
                             </div>
                         </div>

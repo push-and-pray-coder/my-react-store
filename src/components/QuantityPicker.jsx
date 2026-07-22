@@ -21,9 +21,9 @@ function QuantityPicker(props){
 
     return (
         <div>
-            <button onClick={decreaseCount}>-</button>
+            <button className="btn btn-white btn-outline-dark m-1" onClick={decreaseCount}>-</button>
             <label> {quantity} </label>
-            <button onClick={increaseCount}>+</button>
+            <button className="btn white btn-outline-dark m-1" onClick={increaseCount}>+</button>
         </div>
     )
 }
